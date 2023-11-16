@@ -13,7 +13,7 @@ public:
     {
         if (top >= n - 1)
         {
-            cout << " Stack Overflow";
+            cout << "Stack Overflow";
         }
         else
         {
@@ -37,12 +37,13 @@ public:
 
     void peak()
     {
-        cout << stack[top];
+        return stack[top];
     }
 
     void size()
     {
-        cout << "Occupied : " << this->top + 1;
+        int size = this->top + 1;
+        return size;
     }
 };
 
