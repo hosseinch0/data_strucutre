@@ -1,17 +1,17 @@
 #include <iostream>
 using namespace std;
 
-class Stack
+class StackReplica
 {
 private:
-    int n = 100;
+    int size = 100;
     int stack[100];
 
 public:
     int top = -1;
     void push(int value)
     {
-        if (top >= n - 1)
+        if (top >= size - 1)
         {
             cout << "Stack Overflow";
         }
@@ -22,34 +22,46 @@ public:
         }
     }
 
-    void pop()
+    int pop()
     {
         if (top <= -1)
         {
-            cout << "Stack Is Empty";
+            return -1;
         }
         else
         {
-            cout << "The popped element is: " << stack[top];
+            int top_temp = stack[top];
             top--;
+            return top_temp;
         }
+        return 0;
     }
 
-    void peak()
+    int peak()
     {
         return stack[top];
     }
 
-    void size()
+    int capacity()
     {
-        int size = this->top + 1;
-        return size;
+        return this->top + 1;
+    }
+
+    bool is_empty()
+    {
+        if (top == -1)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    bool is_full()
+    {
+        if (top == size - 1)
+        {
+            return true;
+        }
+        return false;
     }
 };
-
-int main()
-{
-    Stack replica = Stack();
-
-    return 0;
-}
