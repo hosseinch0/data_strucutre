@@ -103,12 +103,4 @@ public:
             return top;
         }
     }
-
-    void check()
-    {
-        while (!target.is_empty())
-        {
-            cout << target.pop() << endl;
-        }
-    }
 };
